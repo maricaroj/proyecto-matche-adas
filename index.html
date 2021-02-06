@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
+    <title>MatcheADAs</title>
+</head>
+<body>
+    <main>
+        <h1 class="title">MatcheADAs</h1>
+
+        <!-- INICIO SECCION CONTROLES PUNTAJE -->
+        <section class="control-status">
+            <article class="control-score">
+                <p class="score-text">Combo x 
+                    <span id="score-combo">1</span>
+                </p>
+                <p class="score-text">Puntos: 
+                    <span id="score-numb">0</span>
+                </p>
+            </article>
+            <article class="control-buttons">
+                <button><i class="fas fa-info" aria-hidden="true"></i></button>
+                <button id="undo-button"><i class="fas fa-undo-alt" aria-hidden="true"></i></button>
+            </article>
+        </section>
+
+        <!-- FIN SECCION CONTROLES PUNTAJE -->
+
+        <!-- INICIO SECCION GRILLA -->
+        <section class="grid-container">
+            <article id="grid"></article>
+        </section>
+        <!-- FIN SECCION GRILLA -->
+
+        <!-- CONTROLADOR DE TIEMPO -->
+        <section class="timer-container">
+            <i class="fas fa-stopwatch" aria-hidden="true"></i>
+            <p class="remaining-time">0:00</p>
+        </section>
+    </main>
+
+    <div class="swal-modal">Hola</div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
