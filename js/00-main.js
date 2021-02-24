@@ -1,9 +1,10 @@
 const grid = document.getElementById('grid');
+const infoButton = document.getElementById('info-button');
+const undoButton = document.getElementById('undo-button');
 
 
 const emojis = ['🧠', '🩹', '💉', '\uD83E\uDEC0','👩🏼‍⚕️','🏥'];  
-let level = 7;
-
+let level = 0;
 
 
 // Generando Grilla
@@ -24,5 +25,10 @@ const generateGrid = () =>{
        
     };
 };
+// Mostrar modal Bienvenida
+window.onload = welcomeModal();
 
-generateGrid();
+
+// Eventos botones
+infoButton.addEventListener('click', welcomeModal)
+undoButton.addEventListener('click', restartModal)

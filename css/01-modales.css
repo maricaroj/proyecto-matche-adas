@@ -1,0 +1,32 @@
+/* ESTILOS MODALES */
+.swal-overlay {
+    background-color: rgba(2, 2, 2, 0.342);
+}
+
+.swal-title{
+    font-weight: 900;
+    color: rgb(255, 0, 0);
+    font-family: 'Kalam';
+}
+
+.swal-text{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+.swal-button{
+    background-color: rgb(24, 10, 150);
+    font-family: 'Kalam';
+    font-size: 1rem;
+}
+
+.swal-button--cancel{
+    background-color: transparent;
+    color: black;
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: rgb(54, 32, 252);
+    color: white;
+}

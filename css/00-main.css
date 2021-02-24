@@ -2,10 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Sedgwick Ave Display', cursive;
+   
     color: white;
-    text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
-    -1px 1px #161616;
+
 }
 
 body {
@@ -48,7 +47,9 @@ body {
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
-
+    font-family: 'Sedgwick Ave Display', cursive;
+    text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
+    -1px 1px #161616;
 }
 .control-score{
     display: flex;
@@ -128,4 +129,7 @@ img.emoji {
     width: 100px;
     border-radius: 10px;
     justify-content: space-evenly;
+    font-family: 'Sedgwick Ave Display', cursive;
+    text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
+    -1px 1px #161616;
 }
