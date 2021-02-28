@@ -1,5 +1,10 @@
 // MODAL SELECCION NIVELES
 const levelSelect = () =>{
+    if(optionWelcome === false){
+        startTimer = setInterval(timer, 1000);
+        return
+    }
+    optionWelcome = false
     swal({
         title: 'Nuevo Juego',
         text: 'Selecciona una dificultad',
@@ -33,11 +38,13 @@ const levelSelect = () =>{
             break;
         }
         generateGrid();
-    })
+    });
 };
+
 
 // MODAL BIENVENIDA
 const welcomeModal = () =>{
+    stopTimer();
     swal({
         title: '¡Welcome!',
         text: ` En MatcheADAs tu objetivo es juntar tres o más figuras del mismo tipo, ya sea en fila o columna. Para eso, selecciona una figura y a continuación una figura adyacente para intercambiarlas de lugar.
@@ -56,18 +63,31 @@ const welcomeModal = () =>{
     .then(levelSelect)
 };
 
+
 // MODAL REINICIAR JUEGO
 const restartModal = () =>{
+    optionWelcome = true;
+    stopTimer();
     swal({
         title: '¿Reiniciar Juego?',
         text: '¡Perderás todo tu puntaje acumulado!',
         buttons: {
             cancel: 'Cancelar', 
-            confirm: 'Nuevo Juego'},
+            confirm:  'Nuevo Juego'
+        },
             closeOnClickOutside: false,
             closeOnEsc: false,
     })
-    .then((nuevoJuego) => nuevoJuego ? levelSelect() : null );
+    .then((value) => {
+        switch (value) {
+            case null:
+                startTimer = setInterval(timer, 1000);
+            break;
+            case true:
+                levelSelect();
+            break;
+        }
+    })
 };
 
 
@@ -92,15 +112,13 @@ const gameOverModal = () =>{
     .then((value) => {
         switch (value) {
             case 'newGame':
+                optionWelcome = true;
                 levelSelect();
                 break;
             case 'reStart':
-                // ejecutar funcion
+                generateGrid(level);
                 break;
             }
     });
+    stopTimer();
 };
-// levelSelect();
-// welcomeModal();
-// restartModal();
-// gameOverModal();
