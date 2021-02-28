@@ -7,6 +7,7 @@
     <!-- Links -->
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/00-main.css">
+    <link rel="stylesheet" href="./css/01-modales.css">
     <script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
@@ -27,7 +28,7 @@
                 </p>
             </article>
             <article class="control-buttons">
-                <button class="info-button"><i class="fas fa-info" aria-hidden="true"></i></button>
+                <button id="info-button" class="info-button"><i class="fas fa-info" aria-hidden="true"></i></button>
                 <button id="undo-button"><i class="fas fa-undo-alt" aria-hidden="true"></i></button>
             </article>
         </section>
@@ -41,12 +42,15 @@
 
         <!-- CONTROLADOR DE TIEMPO -->
         <section class="timer-container">
-            <i class="fas fa-stopwatch" aria-hidden="true"></i>
-            <p class="remaining-time">0:00</p>
+            <i class="fas fa-stopwatch icon-time" aria-hidden="true"></i>
+            <p id="remaining-time" class="remaining-time">00:00</p>
         </section>
     </main>
     <!-- Twemoji -->
     <script src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js" integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4" crossorigin="anonymous"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./js/01-modales.js"></script>
     <script src="./js/00-main.js"></script>
 </body>
 </html>
