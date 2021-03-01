@@ -1,143 +1,151 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-image: url('../img/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    backdrop-filter: brightness(0.7);
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: brightness(0.7);
 }
 
-.title{
-    width: 100%;
-    font-family: 'kalam';
-    text-shadow: 1px 1px rgb(0, 0, 0);
-    color: rgb(255, 0, 0);
-    font-weight: bold;
-    font-size: 5rem;
-    text-align: center;
-    
+.title {
+  width: 100%;
+  font-family: "kalam";
+  text-shadow: 1px 1px rgb(0, 0, 0);
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  font-size: 5rem;
+  text-align: center;
 }
 
-.main-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
-    margin: auto;
-    position: relative;
-    top: 45px;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  top: 45px;
 }
 
-.control-status{
-    width: 100%;
-    padding: 15px;
-    background-color: rgb(192,0,0);
-    border: 4px solid rgb(117, 0, 0);
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    font-family: 'Sedgwick Ave Display', cursive;
-    text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
+.control-status {
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(192, 0, 0);
+  border: 4px solid rgb(117, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  font-family: "Sedgwick Ave Display", cursive;
+  text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
     -1px 1px #161616;
 }
 
-.control-score{
-    display: flex;
-    width: 50%;
-    justify-content: space-evenly;
+.control-score {
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
 }
 
-.score-text{
-    font-size: 1.25rem;
+.score-text {
+  font-size: 1.25rem;
 }
 
-button{
-   background-color: transparent;
-   outline: none;
-   border: none;
-   margin-left: 15px;
+button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  margin-left: 15px;
 }
 
-button i{
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 6px 10px;
+button i {
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 10px;
 }
 
-.info-button:hover .fa-info{
-    background-color: rgb(117, 0, 0);
-    border-radius: 50%;
-    padding: 6px 10px;
+.info-button:hover .fa-info {
+  background-color: rgb(117, 0, 0);
+  border-radius: 50%;
+  padding: 6px 10px;
 }
 
-.fa-undo-alt{
-    transition: .5s;
+.fa-undo-alt {
+  transition: 0.5s;
 }
 
-#undo-button:hover .fa-undo-alt{
-    transform: rotate(-180deg);
+#undo-button:hover .fa-undo-alt {
+  transform: rotate(-180deg);
 }
 
-.grid-container{
-    width: 100%;
-    background-color: rgba(2, 2, 2, 0.527);
-    border: 4px solid rgb(117, 0, 0);
-    border-radius: 10px;
-    margin: 15px 0 20px 0;
-    padding: 12px;
+.grid-container {
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.527);
+  border: 4px solid rgb(117, 0, 0);
+  border-radius: 10px;
+  margin: 15px 0 20px 0;
+  padding: 12px;
 }
 
 /* ESTILOS GRILLA */
-#grid{
-    display: flex;
-    flex-wrap: wrap;
-    height: 450px;
-    justify-content: center;
-    align-items: center;
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#grid div{
-    display: flex;
-    width: 50px; 
-    height: 50px;
-    justify-content: center;
-    align-items: center;
+#grid div {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin: 0.5px;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ESTILOS EMOJIS */
 img.emoji {
-    width: 85%;
-    transform: scale(1);
-    transition: 0.2s;
-    margin: 0 .05em 0 .1em;
-    vertical-align: -0.1em;
+  width: 85%;
+  transform: scale(1.1);
+  transition: 0.2s;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+  filter: drop-shadow(1px 1px 0px black);
 }
 
-.timer-container{
-    display: flex;
-    padding: 9px;
-    background-color: rgb(24, 10, 150);
-    border: 4px solid rgb(7,0,64);
-    width: 100px;
-    border-radius: 10px;
-    justify-content: space-evenly;
-    font-family: 'Sedgwick Ave Display', cursive;
-    text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
+.timer-container {
+  display: flex;
+  padding: 9px;
+  background-color: rgb(24, 10, 150);
+  border: 4px solid rgb(7, 0, 64);
+  width: 100px;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-shadow: 1px 1px #161616, 1px -1px #161616, -1px -1px #161616,
     -1px 1px #161616;
 }
 
 .remaining-time,
-.icon-time{
-    font-size: 20px;
-    margin-right: 4px;
+.icon-time {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.select {
+  background-color: rgba(2, 2, 2, 0.267);;
+  border: 2px outset rgb(197, 174, 174);
+  border-radius: 5px;
+  /* padding: 2px; */
 }
