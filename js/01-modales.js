@@ -1,9 +1,5 @@
 // MODAL SELECCION NIVELES
 const levelSelect = () => {
-  if (optionWelcome === false) {
-    startTimer = setInterval(timer, 1000);
-    return;
-  }
   optionWelcome = false;
   swal({
     title: "Nuevo Juego",
@@ -47,7 +43,7 @@ const welcomeModal = () => {
     title: "¡Welcome!",
     text: ` En MatcheADAs tu objetivo es juntar tres o más figuras del mismo tipo, ya sea en fila o columna. Para eso, selecciona una figura y a continuación una figura adyacente para intercambiarlas de lugar.
         
-        Si se forma un grupo, esas figuras se eliminarán y ganarás puntos. ¡Sigue armando grupos de 3 o más antes de que se acabe el tiempo!
+        Si se forma un grupo, esas figuras se eliminarán y ganarás puntos. ¡Sigue armando grupos de 3 o más antes que se acabe el tiempo!
         
         Controles
         Click izquierdo: selección
@@ -57,12 +53,16 @@ const welcomeModal = () => {
     button: "A jugar",
     closeOnClickOutside: false,
     closeOnEsc: false,
-  }).then(levelSelect);
-};
-
+  }).then(()=>{
+    if(optionWelcome){
+      levelSelect();
+    }else if(!optionWelcome){
+      startTimer = setInterval(timer, 1000);
+    };
+  });
+}
 // MODAL REINICIAR JUEGO
 const restartModal = () => {
-  optionWelcome = true;
   stopTimer();
   swal({
     title: "¿Reiniciar Juego?",
@@ -105,7 +105,6 @@ const gameOverModal = () => {
   }).then((value) => {
     switch (value) {
       case "newGame":
-        optionWelcome = true;
         levelSelect();
         break;
       case "reStart":
