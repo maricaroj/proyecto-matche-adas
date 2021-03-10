@@ -24,12 +24,15 @@ const levelSelect = () => {
     switch (value) {
       case "easy":
         level = 9;
+        time = 90;
         break;
       case "middle":
         level = 8;
+        time = 60;
         break;
       case "hard":
         level = 7;
+        time = 30;
         break;
     }
     generateGrid();
@@ -57,7 +60,7 @@ const welcomeModal = () => {
     if(optionWelcome){
       levelSelect();
     }else if(!optionWelcome){
-      startTimer = setInterval(timer, 1000);
+      timer(time);
     };
   });
 }
@@ -76,7 +79,7 @@ const restartModal = () => {
   }).then((value) => {
     switch (value) {
       case null:
-        startTimer = setInterval(timer, 1000);
+        timer(time);
         break;
       case true:
         levelSelect();

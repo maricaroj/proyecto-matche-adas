@@ -110,13 +110,15 @@ button i {
   width: 50px;
   height: 50px;
   margin: 0.5px;
+  padding: 6px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /* ESTILOS EMOJIS */
 img.emoji {
-  width: 85%;
+  width: 100%;
   transform: scale(1.1);
   transition: 0.2s;
   margin: 0 0.05em 0 0.1em;
@@ -148,5 +150,4 @@ img.emoji {
   background-color: rgba(2, 2, 2, 0.267);;
   border: 2px outset rgb(197, 174, 174);
   border-radius: 5px;
-  /* padding: 2px; */
 }
