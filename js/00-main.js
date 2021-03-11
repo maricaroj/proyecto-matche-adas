@@ -2,9 +2,11 @@ const grid = document.getElementById("grid");
 const infoButton = document.getElementById("info-button");
 const undoButton = document.getElementById("undo-button");
 const remaningTime = document.getElementById("remaining-time");
+const gridContainer = document.getElementById("grid-container");
 
 const emojis = ["🧠", "🩹", "💉", "\uD83E\uDEC0", "👩🏼‍⚕️", "🏥"];
 let level;
+let size;
 let startTimer;
 let time;
 let optionWelcome = true;
@@ -21,8 +23,8 @@ const getBox = (x, y) => {
   box.dataset.x = x;
   box.dataset.y = y;
   box.innerHTML = gridArr[x][y];
-  box.style.width = `${450 / level}px`;
-  box.style.height = `${450 / level}px`;
+  box.style.width = `${(size / level - 5).toFixed(0)}px`;
+  box.style.height = `${(size / level - 5).toFixed(0)}px`;
   grid.appendChild(box);
   box.addEventListener("click", selectBox);
   twemoji.parse(document.body);
@@ -30,6 +32,7 @@ const getBox = (x, y) => {
 
 // Generando Grilla
 const generateGrid = () => {
+  dataRestart = [];
   secondsToMinutes(time);
   gridArr = [];
   grid.innerHTML = "";
@@ -42,6 +45,7 @@ const generateGrid = () => {
   }
   timer(time);
   dataRestart.push(level, time);
+  console.log(dataRestart);
   return dataRestart;
 };
 
@@ -105,3 +109,16 @@ const isAdjancent = (box1, box2) => {
   }
   return false;
 };
+
+// Ajustando tamaño grilla responsive
+const resize = () => {
+  size = gridContainer.getBoundingClientRect().width;
+  if (innerWidth > 550) {
+    return;
+  } else {
+    gridContainer.style.width = `${size}px`;
+    gridContainer.style.height = `${size}px`;
+  }
+  return size;
+};
+window.onload = resize;
