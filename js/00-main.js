@@ -9,6 +9,7 @@ let startTimer;
 let time;
 let optionWelcome = true;
 let gridArr = [];
+let dataRestart = [];
 
 // Generar item random
 const getRandom = () =>
@@ -40,7 +41,8 @@ const generateGrid = () => {
     }
   }
   timer(time);
-  return level;
+  dataRestart.push(level, time);
+  return dataRestart;
 };
 
 // Timer
@@ -61,6 +63,7 @@ const timer = () => {
       gameOverModal();
     }
   }, 1000);
+  return time;
 };
 
 const stopTimer = () => {
@@ -77,10 +80,13 @@ undoButton.addEventListener("click", restartModal);
 // Seleccionar items
 const selectBox = (e) => {
   let clickedItem = document.querySelector(".select");
+  console.log(clickedItem);
   if (clickedItem) {
     console.log(isAdjancent(clickedItem, e.path[1]));
   } else {
-    e.path[1].classList.add("select");
+    if (e.target.classList.contains("emoji")) {
+      e.path[1].classList.add("select");
+    }
   }
 };
 
@@ -89,11 +95,6 @@ const isAdjancent = (box1, box2) => {
   const datax2 = Number(box2.dataset.x);
   const datay1 = Number(box1.dataset.y);
   const datay2 = Number(box2.dataset.y);
-  console.log(box1.dataset.x);
-  console.log(box1.dataset.y);
-  console.log(box2.dataset.x);
-  console.log(box2.dataset.y);
-
   if (
     (datax1 === datax2 && datay1 === datay2 - 1) || //arriba
     (datax1 === datax2 && datay1 === datay2 + 1) || //abajo

@@ -56,14 +56,14 @@ const welcomeModal = () => {
     button: "A jugar",
     closeOnClickOutside: false,
     closeOnEsc: false,
-  }).then(()=>{
-    if(optionWelcome){
+  }).then(() => {
+    if (optionWelcome) {
       levelSelect();
-    }else if(!optionWelcome){
+    } else if (!optionWelcome) {
       timer(time);
-    };
+    }
   });
-}
+};
 // MODAL REINICIAR JUEGO
 const restartModal = () => {
   stopTimer();
@@ -111,7 +111,8 @@ const gameOverModal = () => {
         levelSelect();
         break;
       case "reStart":
-        generateGrid(level);
+        time = dataRestart[1];
+        generateGrid(dataRestart[0]);
         break;
     }
   });
