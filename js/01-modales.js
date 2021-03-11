@@ -111,8 +111,8 @@ const gameOverModal = () => {
         levelSelect();
         break;
       case "reStart":
-        generateGrid(dataRestart[0]);
         time = dataRestart[1]
+        generateGrid(dataRestart[0]);
         break;
     }
   });
