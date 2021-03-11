@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mariana Juárez">
+    <meta name="description" content="Juego de navegador conocido como match-3.">
+    <meta name="keywords" content="juego, match-3, greys anatomy">
+    <!-- OPEN GRAPH - FACEBOOK -->
+    <meta property="og:title" content="MatcheADAs">
+    <meta property="og:description" content="Juego de navegador conocido como match-3.">
+    <meta property="og:type" content="article">
+    <meta property="og:site name" content="MatcheADAs">
+    <meta property="og:url" content="https://maricaroj.github.io/proyecto-matche-adas/">
+    <meta property="og:image" content="https://github.com/maricaroj/proyecto-matche-adas/blob/accessibility/img/00-matcheadas-screen.png?raw=true">
+    <!-- TWITTER -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://maricaroj.github.io/proyecto-matche-adas/">
+    <meta property="twitter:title" content="Mariana Juárez">
+    <meta property="twitter:description" content="Juego de navegador conocido como match-3.">
+    <meta property="twitter:image" content="https://github.com/maricaroj/proyecto-matche-adas/blob/accessibility/img/00-matcheadas-screen.png?raw=true">
     <!-- Links -->
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/00-main.css">
@@ -14,7 +30,7 @@
     <title>MatcheADAs</title>
 </head>
 <body>
-    <main class="main-container">
+    <main id="main-container" class="main-container">
         <h1 class="title">MatcheADAs</h1>
 
         <!-- INICIO SECCION CONTROLES PUNTAJE -->
@@ -28,14 +44,14 @@
                 </p>
             </article>
             <article class="control-buttons">
-                <button id="info-button" class="info-button"><i class="fas fa-info" aria-hidden="true"></i></button>
-                <button id="undo-button"><i class="fas fa-undo-alt" aria-hidden="true"></i></button>
+                <button id="info-button" class="info-button" aria-label="Instrucciones"><i class="fas fa-info" aria-hidden="true"></i></button>
+                <button id="undo-button" aria-label="Reiniciar juego"><i class="fas fa-undo-alt" aria-hidden="true"></i></button>
             </article>
         </section>
         <!-- FIN SECCION CONTROLES PUNTAJE -->
 
         <!-- INICIO SECCION GRILLA -->
-        <section class="grid-container">
+        <section id="grid-container" class="grid-container">
             <article id="grid"></article>
         </section>
         <!-- FIN SECCION GRILLA -->
