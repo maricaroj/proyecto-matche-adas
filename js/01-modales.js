@@ -60,10 +60,11 @@ const welcomeModal = () => {
     if (optionWelcome) {
       levelSelect();
     } else if (!optionWelcome) {
-      timer(time);
+      timer();
     }
   });
 };
+
 // MODAL REINICIAR JUEGO
 const restartModal = () => {
   stopTimer();
@@ -79,7 +80,7 @@ const restartModal = () => {
   }).then((value) => {
     switch (value) {
       case null:
-        timer(time);
+        timer();
         break;
       case true:
         levelSelect();

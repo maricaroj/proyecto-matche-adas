@@ -43,9 +43,8 @@ const generateGrid = () => {
       getBox(i, j);
     }
   }
-  timer(time);
+  timer();
   dataRestart.push(level, time);
-  console.log(dataRestart);
   return dataRestart;
 };
 
@@ -84,9 +83,11 @@ undoButton.addEventListener("click", restartModal);
 // Seleccionar items
 const selectBox = (e) => {
   let clickedItem = document.querySelector(".select");
-  console.log(clickedItem);
   if (clickedItem) {
-    console.log(isAdjancent(clickedItem, e.path[1]));
+    if (isAdjancent(clickedItem, e.path[1])) {
+      swapBox(clickedItem, e.path[1]);
+      clickedItem.classList.remove("select");
+    }
   } else {
     if (e.target.classList.contains("emoji")) {
       e.path[1].classList.add("select");
@@ -109,6 +110,25 @@ const isAdjancent = (box1, box2) => {
   }
   return false;
 };
+
+// Intercambiar iconos
+const swapBox = (box1, box2) => {
+  const x1 = Number(box1.dataset.x);
+  const x2 = Number(box2.dataset.x);
+  const y1 = Number(box1.dataset.y);
+  const y2 = Number(box2.dataset.y);
+
+  // modificar la grilla en js
+  let change = gridArr[x1][y1];
+  gridArr[x1][y1] = gridArr[x2][y2];
+  gridArr[x2][y2] = change;
+
+  // modificar el html
+  let change2 = box1.innerHTML;
+  box1.innerHTML = box2.innerHTML;
+  box2.innerHTML = change2;
+};
+
 
 // Ajustando tamaño grilla responsive
 const resize = () => {
