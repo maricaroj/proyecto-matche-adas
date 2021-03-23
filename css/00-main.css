@@ -116,6 +116,13 @@ button i {
   align-items: center;
   cursor: pointer;
 }
+.horizontal{
+  background-color: blueviolet;
+}
+
+.vertical{
+  background-color: chartreuse;
+}
 
 /* ESTILOS EMOJIS */
 img.emoji {
