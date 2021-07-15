@@ -87,41 +87,38 @@ button i {
   transform: rotate(-180deg);
 }
 
+/* ESTILOS GRILLA */
 .grid-container {
-  width: 95%;
-  max-height: 500px;
-  min-height: 200px;
+  width: 450px;
+  height: 460px;
+  margin: 15px 0 20px 0;
   background-color: rgba(2, 2, 2, 0.527);
   border: 4px solid rgb(117, 0, 0);
   border-radius: 10px;
-  margin: 15px 0 20px 0;
-  padding: 0.5rem;
 }
 
-/* ESTILOS GRILLA */
-#grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.grid {
+  height: 96%;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
 }
 
-#grid div {
-  display: flex;
-  width: 50px;
-  height: 50px;
-  margin: 0.5px;
-  padding: 6px;
-  justify-content: center;
-  align-items: center;
+.item {
+  width: 68px;
+  max-width: 68px;
+  border: none;
+  font-size: 32px;
+  box-sizing: border-box;
+  padding: 5px;
+  position: absolute;
+  transition: 0.5s;
   cursor: pointer;
-}
-.horizontal{
-  background-color: blueviolet;
-}
-
-.vertical{
-  background-color: chartreuse;
+  transform: scale(1);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ESTILOS EMOJIS */
@@ -155,19 +152,49 @@ img.emoji {
 }
 
 .select {
-  background-color: rgba(2, 2, 2, 0.267);;
+  background-color: rgba(2, 2, 2, 0.267);
   border: 2px outset rgb(197, 174, 174);
   border-radius: 5px;
 }
 
-@media(max-width: 500px){
-  .main-container{
-    top: 30px;
+.delete-item {
+  transform: scale(0);
+}
+
+/* MEDIA */
+@media (max-width: 767px) {
+  .main-container {
+    width: 300px;
   }
-  .title{
+
+  .grid-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .item {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .main-container {
+    width: 300px;
+  }
+
+  .grid-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .title {
     font-size: 2rem;
   }
-  .control-status{
-    font-size: .7rem;
+  .control-status {
+    font-size: 0.5rem;
+  }
+
+  .item {
+    font-size: 20px;
   }
 }
