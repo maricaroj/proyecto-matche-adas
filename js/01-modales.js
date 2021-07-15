@@ -93,7 +93,7 @@ const restartModal = () => {
 const gameOverModal = () => {
   swal({
     title: "¡Juego Terminado!",
-    text: `Puntaje Final: 0`,
+    text: `Puntaje Final: ${points}`,
     buttons: {
       newGame: {
         text: "Nuevo Juego",
