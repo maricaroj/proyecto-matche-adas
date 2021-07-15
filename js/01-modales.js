@@ -35,7 +35,7 @@ const levelSelect = () => {
         time = 30;
         break;
     }
-    generateGrid();
+    gridMatchesFree(emojis);
   });
 };
 
@@ -112,8 +112,8 @@ const gameOverModal = () => {
         levelSelect();
         break;
       case "reStart":
-        time = dataRestart[1]
-        generateGrid(dataRestart[0]);
+        time = dataRestart[1];
+        gridMatchesFree(emojis);
         break;
     }
   });
