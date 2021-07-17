@@ -153,14 +153,21 @@ const selectBox = (e) => {
 
       if (theyMatch()) {
         searchMatches();
+        clickedItem.classList.remove("select")
       } else {
-        setTimeout(() => swapBoxes(clickedItem, e.path[1]), 500);
+        setTimeout(() => {
+          swapBoxes(clickedItem, e.path[1]);
+          clickedItem.classList.remove("select")
+        }, 500);
       }
     } else {
       clickedItem.classList.remove("select");
-      e.path[1].classList.add("select");
+      e.path[1].classList.remove("select");
     }
-  } else e.path[1].classList.add("select");
+  } else {
+    e.path[1].classList.add("select")
+
+  };
 };
 
 const deleteMatches = () => {
@@ -180,6 +187,7 @@ const deleteMatches = () => {
   // reset class
   for (let div of matches) {
     div.classList.remove("is-match");
+    div.classList.remove("select");
   }
 };
 
